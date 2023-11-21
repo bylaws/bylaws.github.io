@@ -1,0 +1,50 @@
+<html><head>
+	<meta charset="UTF-8">
+	<title>Billy Site</title>
+
+	<link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+	<marquee behavior="alternate"><img src="b.png"></marquee><br>
+	Billy Site。<br>
+	<hr size="5" noshade="" color="#00000">
+	<div id="ELECTRO_DISPLAY" style="background-color: black; color: rgb(0, 255, 0);">Welcome!</div>
+
+
+
+
+
+
+<script type="module">
+	function sleep(during) {
+		return new Promise((resolve, reject) => {
+			setTimeout(() => {
+				resolve();
+			}, during);
+		});
+	}
+
+	let ELECTRO_DISPLAY_EL = document.getElementById("ELECTRO_DISPLAY");
+	const ELECTRO_DISPLAY_TEXT = ["Helllo! This is my new site"];
+
+	while (true) {
+		for (const TEXT_PART of ELECTRO_DISPLAY_TEXT) {
+			ELECTRO_DISPLAY_EL.innerText = "_";
+			for (const CHAR of TEXT_PART.split("")) {
+				await sleep(200);
+					let BGM = new Audio();
+	BGM.loop = true;
+	BGM.src = 'a.mp3';
+	BGM.volume = 0.1;
+		BGM.play()
+				ELECTRO_DISPLAY_EL.innerText = ELECTRO_DISPLAY_EL.innerText.slice(0, -1) + CHAR + "_";
+			}
+			await sleep(200);
+		}
+	}
+</script>
+
+<script>
+</script>
+<!------------------------------------------------------------------------------------------------------></body></html>
